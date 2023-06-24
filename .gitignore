@@ -140,3 +140,5 @@ cython_debug/
 TODO
 SPEC.md
 SQL.md
+
+static/images/uploads/*
