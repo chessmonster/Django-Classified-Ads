@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-12 col-lg-12 col-xs-12 text-center">
         <div class="contents">
-          <h1 class="head-title">Welcome to <span class="year">Hunting Ads</span></h1>
+          <h1 class="head-title">Welcome to <span class="year">1PH</span> Classified Ads</h1>
           <p>Buy And Sell Everything From Hunting Vehicles, Firearms, Merchandise <br> Or Search Hunting Land,
             Guide Jobs
             And More</p>
@@ -24,7 +24,7 @@
                   <i class="lni-map-marker"></i>
                   <div class="select">
                     <select name="state_name">
-                      <option selected="true" disabled="disabled">Select State</option>
+                      <option selected="true" disabled="disabled">Select City</option>
                       {% for state_name in state_search %}
                       <option value="{{ state_name }}">{{ state_name }}</option>
                       {% endfor %}
@@ -42,7 +42,8 @@
                     </select>
                   </div>
                 </div>
-                <button class="btn btn-common" type="submit"><i class="lni-search"></i> Search Now</button>
+
+                  <button class="btn btn-common" type="submit"><i class="lni-search"></i> Search Now</button>
               </form>
             </div>
           </div>
@@ -72,6 +73,26 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12 col-md-12 col-xs-12">
+      
+
+      <!-- Browse by Category Start -->
+      <section class="section-padding">
+        <div class="container">
+          <h1 class="section-title">Browse Classifieds by Category</h1>
+          <div class="row">
+            {% for category in category_listing %}
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <a style="font-size: 18px; color: #89613A; line-height: 2;" href="{% url 'category-archive' category.slug %}">
+                <i class="lni-folder"></i>
+                {{ category }}
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      <!-- Browse by Category End -->
+
       <!-- Featured Ads Listings Starts -->
       <section id="featured" class="section-padding">
         <h1 class="section-title">Featured Classifieds</h1>
@@ -124,24 +145,6 @@
         </div>
       </section>
       <!-- Featured Ads Listings Ends -->
-
-      <!-- Browse by Category Start -->
-      <section class="section-padding">
-        <div class="container">
-          <h1 class="section-title">Browse Classifieds by Category</h1>
-          <div class="row">
-            {% for category in category_listing %}
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-              <a style="font-size: 18px; color: #89613A; line-height: 2;" href="{% url 'category-archive' category.slug %}">
-                <i class="lni-folder"></i>
-                {{ category }}
-              </a>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-      </section>
-      <!-- Browse by Category End -->
 
       <!-- Browse by State Start -->
       <section class="section-padding">
